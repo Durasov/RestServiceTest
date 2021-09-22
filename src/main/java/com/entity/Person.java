@@ -19,7 +19,7 @@ public class Person implements Serializable {
     private int personId;
 
     @Basic
-    @Column(name = "name")
+    @Column(name = "name", nullable = false, unique=true)
     private String name;
 
     @OneToMany(targetEntity = com.entity.Contacts.class, mappedBy = "sickPerson", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
